@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.image_section{
+    background-color: #F3D184;
+    height: 100vh;
+    
+}
+.image_section img{
+    height: 75vh;
+    width: 100vh;
+    position: absolute;
+    bottom: 0;
+
+}
+.text_section {
+    padding: 60px;
+}
+.text_section span{
+    color: #b58619;
+    font-size: 30px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.text_section h3{
+    padding-top: 10px;
+    font-weight: 700;
+    color: #8c660c;
+}
+.input_section input,
+.usernameInput{
+    border: none;
+    background-color: #dfdfdf;
+    /* opacity: 0.5px; */
+    line-height: 40px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 2px 10px;
+}
+.form-section{
+    padding: 100px 210px;
+}
+.form-section h1{
+    font-weight: 700;
+}
+.input_section label{
+    font-weight: 700;
+}
+.createBtn{
+    background-color: #eb386e;
+    color: #fff;
+    padding: 7px 25px;
+    border-radius: 5px;
+    border: none;
+}
+.error{
+    background-color: rgb(224, 167, 167) !important;
+    color: rgb(237, 62, 62) ;
+}
+@media screen and (max-width: 920px) {
+    .image_section img{
+        height: 60vh;
+        width: 70vh;
+
+        
+    
+    }
+    
+}
+@media screen and (max-width: 520px) {
+    .image_section{
+       
+        height: 50vh;
+        
+    }
+    .image_section img{
+        position: relative;
+        height: 50vh;
+        width: 60vh;
+        
+    
+    }
+    
+}

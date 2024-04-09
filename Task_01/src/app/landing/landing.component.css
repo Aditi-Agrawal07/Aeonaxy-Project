@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.navbar-brand{
+    font-family: "Pacifico", cursive;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #000;
+}
+.nav-link{
+    color: #000;
+}
+.email-image{
+    opacity: 0.5;
+}

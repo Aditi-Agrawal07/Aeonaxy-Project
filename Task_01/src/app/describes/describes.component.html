@@ -1,0 +1,60 @@
+<div class="container text-center">
+    <div class="heading">
+ <h2>What brings you to Dribble?</h2>
+ <p>Select the options that best describe Don't worry you can explore ohter options later</p>
+    </div>
+
+
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-4">
+        <div class="card p-4 align-items-center" style="width:20rem"  (click)="onclicked(1)" [ngClass] ="{'selected-card': selectedCard === 1}">
+          <img src="../../assets/image_1.png" class="card-img" >
+          <div class="card-text pb-2">I'm a designer looking to share my work</div>
+          @if(selectedCard === 1){
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a molestiae qui.</p>
+           }
+              <input type="checkbox" id = "checkbox-1" checked="checked" [ngClass] ="{'checked': selectedCard==1}">
+              <span class="checkmark"></span>
+         
+     
+      </div>
+    </div>
+    <div class="col-md-4">
+ 
+        <div class="card p-4 align-items-center" style="width:20rem" (click) ="onclicked(2)" [ngClass] = "{'selected-card': selectedCard ===2}" >
+          <img src="../../assets/image_2.png" class="card-img" >
+          <div class="card-text pb-2">I'm looking to hire a designer</div>
+
+          @if(selectedCard === 2){
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a molestiae qui.</p>
+           }
+          <input type="checkbox" id = "checkbox-2" checked="checked" [ngClass] ="{'checked': selectedCard==2}">
+          <span class="checkmark"></span>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+    
+        <div class="card  p-4 align-items-center" style="width:20rem" (click) ="onclicked(3)"  [ngClass] = "{'selected-card': selectedCard==3}">
+       
+          <img src="../../assets/image_3.png" class="card-img">
+  
+          <div class="card-text pb-2">I'm looking for design a inspiration</div>
+        
+         @if(selectedCard === 3){
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a molestiae qui.</p>
+         }
+        
+          <input type="checkbox" id ="checkbox-3" [ngClass] ="{'checked': selectedCard==3}">
+          <span class="checkmark"></span>
+      </div>
+  
+    </div>
+
+  </div>
+
+
+  
+
+   <div class="btn finish-btn" (click) ="onfinshBtn()">Finish</div>
+</div>

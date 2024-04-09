@@ -1,0 +1,31 @@
+<div class="container profile_container">
+    <h1>Welcome! Lets create your profile</h1>
+    <p>Let others get to know you better! You can do these later</p>
+    <div class="row">
+        <div class="col-lg-4">
+           <div class="heading my-4">
+            Add an avatar
+           </div>
+            <div class="profile_image" [ngStyle] = "{'border': 'dashed rgb(212, 212, 212);'}">
+                <img [src]= "selectedImage"alt="">
+                @if(!selectedImage){
+                    <fa-icon [icon]="faCamera" style="color: rgb(212, 212, 212);"></fa-icon>
+                }
+            </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center image_section">
+            <label for="file">Choose Image</label>
+            <input type="file" src="" alt="" accept="image/*" class="customeFileBtn" id="file" hidden (change)="onFileChange($event)">
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-lg-12 location_section">
+            <label for="location">
+                Add your location</label><br>
+            <input type="text" placeholder="Enter a location" id="location" [(ngModel)] ="location">
+        </div>
+    </div>
+
+    <div class="btn next_btn" (click) = "onSubmit()">Next</div>
+
+</div>
