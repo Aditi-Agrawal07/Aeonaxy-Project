@@ -2,7 +2,7 @@
 const {User} = require("../model")
 
 // Import Utility 
-const  {crypto} = require("../utils")
+const  {crypto,resend} = require("../utils")
 
 async function registerUser(payload){
     try{
@@ -10,7 +10,11 @@ async function registerUser(payload){
         payload.password = crypto.generateHash(payload.password)
 
         user = new User(payload)
+        await resend.emailSend(payload.email)
+
         await user.save()
+      
+        
 
         return user
     }catch(err){

@@ -23,11 +23,19 @@ const UserSchema = new mongoose.Schema(
         },
      
       },
+      image:{
+        type:string
+      },
       termsandCondition:{
         type:Boolean,
         require: true
+      },
+      location:{
+        type:String
+      },
+      description:{
+        type:String
       }
-
     }
 )
 

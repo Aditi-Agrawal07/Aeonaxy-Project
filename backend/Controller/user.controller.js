@@ -35,6 +35,35 @@ const registerUser =  async(req,res)=>{
 
 }
 
+const updateUser = async(req,res)=>{
+    try{
+
+        const username = req.params.username
+        const reqbody = req.body
+        console.log("Request Body", reqbody);
+        const uploadedFile = await cloudinary.FileUpload(req.file.path);
+
+        console.log(uploadedFile);
+
+        // const user = await User.findOne({username:username})
+
+        const user  = await User.findOneAndUpdate({username:username},{...reqbody,image:uploadedFile.url},{new:true})
+
+        console.log(user);
+
+        return res.status(200).send({
+            hasError:false,
+            user
+        })
+
+
+    }catch(err){
+
+    }
+
+}
+
 module.exports ={
-    registerUser
+    registerUser,
+    updateUser
 }

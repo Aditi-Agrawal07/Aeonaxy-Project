@@ -38,6 +38,7 @@ console.log(this.register.value);
       
       
       this.usedetailService.userEmail = this.register.value.email
+      this.usedetailService.username = this.register.value.username
       this.router.navigate(['profile'])
       
     },(error)=>{

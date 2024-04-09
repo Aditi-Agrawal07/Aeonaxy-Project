@@ -21,6 +21,8 @@ export class ProfileComponent {
   selectedImage: any = null;
   location: string = ""
 
+  profileData: {} ={}
+
   constructor(private router: Router, private userdataService:UserDataService){}
 
 
@@ -41,7 +43,8 @@ export class ProfileComponent {
   }
 
   onSubmit(){
-    
+    this.profileData = {location: this.location}
+    this.userdataService.setProfileData(this.profileData)
    this.router.navigate(['profile-details'])
   
  
