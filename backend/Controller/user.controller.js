@@ -3,6 +3,8 @@ const { User } = require("./../model")
 // Import Service
 const {UserService} = require("../Service")
 
+const {cloudinary} = require("./../utils")
+
 const registerUser =  async(req,res)=>{
     try{
         const requestData = req.body
@@ -40,14 +42,14 @@ const updateUser = async(req,res)=>{
 
         const username = req.params.username
         const reqbody = req.body
-        console.log("Request Body", reqbody);
-        const uploadedFile = await cloudinary.FileUpload(req.file.path);
+        // console.log("Request Body", reqbody);
+        // const uploadedFile = await cloudinary.FileUpload(req);
 
-        console.log(uploadedFile);
+        // console.log(uploadedFile);
 
         // const user = await User.findOne({username:username})
 
-        const user  = await User.findOneAndUpdate({username:username},{...reqbody,image:uploadedFile.url},{new:true})
+        const user  = await User.findOneAndUpdate({username:username},{...reqbody},{new:true})
 
         console.log(user);
 
@@ -59,6 +61,10 @@ const updateUser = async(req,res)=>{
 
     }catch(err){
 
+        return res.status(400).send({
+            hasError: true,
+            message: err.message
+        })
     }
 
 }

@@ -19,7 +19,8 @@ import { UserDataService } from '../user-data.service';
 export class ProfileComponent {
   faCamera = faCamera
   selectedImage: any = null;
-  location: string = ""
+  location: string = "";
+  file:any
 
   profileData: {} ={}
 
@@ -29,21 +30,21 @@ export class ProfileComponent {
 
   
   onFileChange(event: any): void {
-    const file = event.target.files[0];
+     this.file = event.target.files[0]
 
-    console.log(file);
+    console.log(this.file);
     
-    if (file) {
+    if (this.file) {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.selectedImage = e.target?.result;
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(this.file);
     }
   }
 
   onSubmit(){
-    this.profileData = {location: this.location}
+    this.profileData = {location: this.location, image: this.file}
     this.userdataService.setProfileData(this.profileData)
    this.router.navigate(['profile-details'])
   

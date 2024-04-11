@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema(
      
       },
       image:{
-        type:string
+        type:String
       },
       termsandCondition:{
         type:Boolean,
