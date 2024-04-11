@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/",
+    "/landing",
+    "/profile",
+    "/profile-details"
+  ]
+}
